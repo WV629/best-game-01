@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shardstorm — a neon arena survival shooter</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        background: #070a18;
+        overflow: hidden;
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      }
+      canvas {
+        display: block;
+        cursor: crosshair;
+      }
+      #status {
+        position: fixed;
+        left: 12px;
+        bottom: 10px;
+        margin: 0;
+        color: #8b93a3;
+        font-size: 12px;
+        pointer-events: none;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="game" width="1280" height="720"></canvas>
+    <p id="status" role="status">Loading…</p>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
