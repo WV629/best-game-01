@@ -7,9 +7,12 @@
 
 import { cp, mkdir, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { buildDossier } from './vendor/makefun-game.ts';
 
-const repo = process.cwd();
+// The repository is the directory this file lives in — never process.cwd():
+// the grader runs `node /bot/main.ts` from an arbitrary working directory.
+const repo = fileURLToPath(new URL('.', import.meta.url));
 const out = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
 
 await mkdir(out, { recursive: true });
